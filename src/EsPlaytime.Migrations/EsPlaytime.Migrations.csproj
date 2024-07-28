@@ -17,4 +17,8 @@
     <ProjectReference Include="..\EsPlaytime\EsPlaytime.csproj" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <BaseOutputPath>..\EsPlaytime\bin\</BaseOutputPath>
+  </PropertyGroup>
+
 </Project>
