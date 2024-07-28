@@ -1,3 +1,7 @@
+# EsPlaytime
+
+A play project to get ef & eventuous playing nicely together. Especially with migrations & bundle
+
 ## Getting the stuff setup
 
 ### dev containers
@@ -31,7 +35,9 @@ Th important thing here is you need a separate project for your `DbContext` or b
 There's error `NETSDK1152: Found multiple publish output files with the same relative path`. and all
 sorts. Not cool :(
 
+Quite a lot of messing about with migration operations as well.
+Note, will need changing for Eventuous 0.15 (breaking change in `Schema.cs`)
 
 ``` bash
-dotnet ef migrations bundle
+dotnet ef migrations bundle --project ./src/EsPlaytime.Migrations/
 ```
