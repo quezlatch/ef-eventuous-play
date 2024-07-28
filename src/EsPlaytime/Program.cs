@@ -1,8 +1,9 @@
 using Microsoft.EntityFrameworkCore;
+using EsPlaytime.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<EsPlaytime.EsDbContext>(
+builder.Services.AddDbContext<EsDbContext>(
     options =>
         options.UseSqlServer(
             builder.Configuration.GetConnectionString("DefaultConnection")));
