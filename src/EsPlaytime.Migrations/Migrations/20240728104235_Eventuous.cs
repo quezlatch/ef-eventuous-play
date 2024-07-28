@@ -11,7 +11,7 @@ namespace EsPlaytime.Migrations.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.Eventuous();
+            migrationBuilder.Eventuous("dbo");
         }
 
         /// <inheritdoc />

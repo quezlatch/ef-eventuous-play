@@ -36,9 +36,11 @@ public class EsMigrationsSqlGenerator : SqlServerMigrationsSqlGenerator
     private void Generate(EventuousOperation operation)
     {
         var eventuousSchema = new Schema(operation.Schema!);
-        // do not use connection from database, or 'puter go splat
-        var connectionString = Dependencies.CurrentContext.Context.Database.GetConnectionString();
-        using var connection = new SqlConnection(connectionString);
-        eventuousSchema.CreateSchema(() => connection);
+        eventuousSchema.CreateSchema(() =>
+        {
+            // do not use connection from database, or 'puter go splat
+            var connectionString = Dependencies.CurrentContext.Context.Database.GetConnectionString();
+            return new SqlConnection(connectionString);
+        }).Wait();
     }
 }
